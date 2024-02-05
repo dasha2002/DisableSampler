@@ -5,8 +5,9 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import javax.swing.*;
 import java.awt.*;
+import java.security.acl.Owner;
 
-    /**
+/**
      ZubovaDP - 2024
      */
 
@@ -25,8 +26,14 @@ import java.awt.*;
 
         private void init() {
             JPanel mainPanel = new JPanel(new GridBagLayout());
-            ObjectNameForDisable = new JTextField(20);
+            ObjectNameForDisable = new JTextField(100);
             JLabel lObjectNameForDisable = new JLabel("ObjectNameForDisable");
+
+            JLabel lSamplerName = new JLabel("<html><strong><h1>Disable sampler</h1></strong></html>");
+
+            JLabel lProjectOwner = new JLabel("Zubova - Greenatom");
+            lProjectOwner.setForeground(Color.gray);
+            lProjectOwner.setAlignmentY(JComponent.BOTTOM_ALIGNMENT);
 
             JRadioButton EnableAllButton = new JRadioButton("Enable all objects", false);
             EnableAllButton.setActionCommand("Enable all objects");
@@ -45,15 +52,21 @@ import java.awt.*;
             layout.setHorizontalGroup(
                     layout.createParallelGroup(Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lSamplerName))
+                            .addGroup(layout.createSequentialGroup()
                                     .addComponent(lObjectNameForDisable)
                                     .addPreferredGap(ComponentPlacement.RELATED)
                                     .addComponent(ObjectNameForDisable))
                             .addGroup(layout.createSequentialGroup()
                                     .addComponent(EnableAllButton)
                                     .addComponent(DisableAllButton)
-                                    .addComponent(ToggleOfAvailabilityButton)));
+                                    .addComponent(ToggleOfAvailabilityButton))
+                            .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lProjectOwner)));
             layout.setVerticalGroup(
                     layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup()
+                                    .addComponent(lSamplerName))
                             .addGroup(layout.createParallelGroup(Alignment.LEADING)
                                     .addComponent(lObjectNameForDisable, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE,
                                             GroupLayout.PREFERRED_SIZE)
@@ -62,7 +75,9 @@ import java.awt.*;
                             .addGroup(layout.createParallelGroup()
                                     .addComponent(EnableAllButton)
                                     .addComponent(DisableAllButton)
-                                    .addComponent(ToggleOfAvailabilityButton)));
+                                    .addComponent(ToggleOfAvailabilityButton))
+                            .addGroup(layout.createParallelGroup(Alignment.TRAILING)
+                                    .addComponent(lProjectOwner)));
 
             //toggleOfAvailability.add(ltoggleOfAvailability);
             //mainPanel.add(ltoggleOfAvailability);

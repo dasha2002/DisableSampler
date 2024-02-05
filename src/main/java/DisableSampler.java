@@ -126,9 +126,9 @@ import java.util.HashMap;
             //ctx.getEngine().askThreadsToStop()*/
             /*System.out.println(String.valueOf(this.getProperty(pObjectNameForDisable)));
             System.out.println(String.valueOf(this.getProperty(pOperationType)));*/
-            result.setStopTest(true);
             result.sampleEnd();
             result.setSuccessful(true);
+            result.setStopTest(true);
             return result;
         }
     }
