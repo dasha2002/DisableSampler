@@ -1,3 +1,6 @@
+package com.blazemeter.jmeter.disableSampler.gui;
+
+import com.blazemeter.jmeter.disableSampler.DisableSampler;
 import org.apache.jmeter.samplers.gui.AbstractSamplerGui;
 import org.apache.jmeter.testelement.TestElement;
 import javax.swing.GroupLayout.Alignment;
@@ -5,7 +8,6 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 import javax.swing.*;
 import java.awt.*;
-import java.security.acl.Owner;
 
 /**
      ZubovaDP - 2024
@@ -90,7 +92,6 @@ import java.security.acl.Owner;
 
         @Override
         public TestElement createTestElement() {
-            // Создаем соответствующий сэмплер
             TestElement sampler = new DisableSampler();
             modifyTestElement(sampler);
             return sampler;
@@ -113,7 +114,6 @@ import java.security.acl.Owner;
 
         @Override
         public String getStaticLabel() {
-            // Устанавливаем отображаемое имя
             return "Disable sampler (GA)";
         }
 

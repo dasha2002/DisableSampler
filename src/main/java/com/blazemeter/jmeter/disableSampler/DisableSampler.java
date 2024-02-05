@@ -1,3 +1,5 @@
+package com.blazemeter.jmeter.disableSampler;
+
 import org.apache.jmeter.samplers.AbstractSampler;
 import org.apache.jmeter.samplers.Entry;
 import org.apache.jmeter.samplers.SampleResult;
@@ -24,7 +26,7 @@ import java.util.HashMap;
         public SampleResult sample(Entry entry) {
             SampleResult result = new SampleResult();
             result.sampleStart();
-            /*// Выводим результат возврата метода функции, введенного в графический интерфейс
+            /*
             int num;
             int num1;
             try{
@@ -40,7 +42,6 @@ import java.util.HashMap;
             GuiPackage guiInstance = GuiPackage.getInstance();
 
             HashTree plan = guiInstance.getTreeModel().getTestPlan();
-            //log.info(plan.toString());
 
             String objectName = String.valueOf(this.getProperty(pObjectNameForDisable));
             String message = "Объект: "+objectName+ "\n\n";
@@ -49,7 +50,6 @@ import java.util.HashMap;
 
 
             List testactionlist = guiInstance.getTreeModel().getNodesOfType(HTTPSamplerBase.class);
-            //log.info(testactionlist.toString());
             for (Object HTTPSamplerBase : testactionlist) {
                 JMeterTreeNode testActionSampler = (JMeterTreeNode) HTTPSamplerBase;
                 if (testActionSampler.getName().equals(objectName)){
@@ -122,8 +122,6 @@ import java.util.HashMap;
             map.clear();
 
             GuiPackage.showMessage(message,"Изменение скрипта",1);
-            //GuiPackage.showMessage("Объект: "+objectName+ "\nВидимость: " + smap.substring(1,smap.length()-1) ,"Изменение скрипта",1);
-            //ctx.getEngine().askThreadsToStop()*/
             /*System.out.println(String.valueOf(this.getProperty(pObjectNameForDisable)));
             System.out.println(String.valueOf(this.getProperty(pOperationType)));*/
             result.sampleEnd();
