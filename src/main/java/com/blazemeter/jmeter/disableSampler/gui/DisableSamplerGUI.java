@@ -29,13 +29,17 @@ import java.awt.*;
         private void init() {
             JPanel mainPanel = new JPanel(new GridBagLayout());
             ObjectNameForDisable = new JTextField(100);
-            JLabel lObjectNameForDisable = new JLabel("ObjectNameForDisable");
+            JLabel lObjectNameForDisable = new JLabel("Object name: ");
 
-            JLabel lSamplerName = new JLabel("<html><strong><h1>Disable sampler</h1></strong></html>");
+            JLabel lSamplerName = new JLabel("<html><strong><h1>Visibility Control Sampler</h1></strong></html>");
 
             JLabel lProjectOwner = new JLabel("Zubova - Greenatom");
+            JLabel lEmptyLabel = new JLabel(" ");
             lProjectOwner.setForeground(Color.gray);
             lProjectOwner.setAlignmentY(JComponent.BOTTOM_ALIGNMENT);
+            JLabel lProjectDescription = new JLabel("\n\nThis plugin allows you to manage visibility of test plan elements such as HTTPSampler, test Action and DebugSampler");
+            lProjectDescription.setForeground(Color.darkGray);
+            lProjectDescription.setAlignmentY(JComponent.BOTTOM_ALIGNMENT);
 
             JRadioButton EnableAllButton = new JRadioButton("Enable all objects", false);
             EnableAllButton.setActionCommand("Enable all objects");
@@ -64,6 +68,12 @@ import java.awt.*;
                                     .addComponent(DisableAllButton)
                                     .addComponent(ToggleOfAvailabilityButton))
                             .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lEmptyLabel))
+                            .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lEmptyLabel))
+                            .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lProjectDescription))
+                            .addGroup(layout.createSequentialGroup()
                                     .addComponent(lProjectOwner)));
             layout.setVerticalGroup(
                     layout.createSequentialGroup()
@@ -78,6 +88,12 @@ import java.awt.*;
                                     .addComponent(EnableAllButton)
                                     .addComponent(DisableAllButton)
                                     .addComponent(ToggleOfAvailabilityButton))
+                            .addGroup(layout.createParallelGroup(Alignment.TRAILING)
+                                    .addComponent(lEmptyLabel))
+                            .addGroup(layout.createParallelGroup(Alignment.TRAILING)
+                                    .addComponent(lEmptyLabel))
+                            .addGroup(layout.createParallelGroup(Alignment.TRAILING)
+                                    .addComponent(lProjectDescription))
                             .addGroup(layout.createParallelGroup(Alignment.TRAILING)
                                     .addComponent(lProjectOwner)));
 
@@ -114,7 +130,7 @@ import java.awt.*;
 
         @Override
         public String getStaticLabel() {
-            return "Disable sampler (GA)";
+            return "Visibility Control Sampler (GA)";
         }
 
         private void initFields(){

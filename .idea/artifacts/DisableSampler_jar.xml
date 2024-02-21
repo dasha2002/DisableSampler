@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="DisableSampler:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/DisableSampler_jar</output-path>
-    <root id="archive" name="DisableSampler.jar">
+    <root id="archive" name="VisibilityControlSampler.jar">
       <element id="module-output" name="DisableSampler" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Программы/apache-jmeter-2.13/apache-jmeter-2.13/lib/ext/ApacheJMeter_components.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Программы/apache-jmeter-2.13/apache-jmeter-2.13/lib/jorphan.jar" path-in-jar="/" />
